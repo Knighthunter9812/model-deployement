@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<h2>Prediction Model</h2>
+
+<p>Choose your company:</p>
+
+<form action="{{ url_for('predict')}}"method="post">
+    <input type="radio" id="A" name="company" value="0">
+    <label for="A">A</label>&nbsp;
+
+    <input type="radio" id="B" name="company" value="1">
+    <label for="B">B</label>&nbsp;
+
+    <input type="radio" id="C" name="company" value="2">
+    <label for="C">C</label>&nbsp;
+
+    <input type="radio" id="D" name="company" value="3">
+    <label for="D">D</label>&nbsp;
+
+    <input type="radio" id="E" name="company" value="4">
+    <label for="E">E</label><br><br>
+
+    <p>Choose pizza diameter:</p>
+
+    <input type="radio" id="8 inch" name="diameter" value="8">
+    <label for="8 inch">8 inch</label>&nbsp;
+
+    <input type="radio" id="8.5 inch" name="diameter" value="8.5">
+    <label for="8.5 inch">8.5 inch</label>&nbsp;
+
+    <input type="radio" id="12 inch" name="diameter" value="12">
+    <label for="12 inch">12 inch</label>&nbsp;
+
+    <input type="radio" id="14 inch" name="diameter" value="14">
+    <label for="14 inch">14 inch</label>&nbsp;
+
+    <input type="radio" id="16 inch" name="diameter" value="16">
+    <label for="16 inch">16 inch</label>&nbsp;
+
+    <input type="radio" id="16.5 inch" name="diameter" value="16.5">
+    <label for="16.5 inch">16.5 inch</label>&nbsp;
+
+    <input type="radio" id="17 inch" name="diameter" value="17">
+    <label for="17 inch">17 inch</label>&nbsp;
+
+    <input type="radio" id="18 inch" name="diameter" value="18">
+    <label for="18 inch">18 inch</label>&nbsp;
+
+    <input type="radio" id="18.5 inch" name="diameter" value="18.5">
+    <label for="18.5 inch">18.5 inch</label>&nbsp;
+
+    <input type="radio" id="20 inch" name="diameter" value="20">
+    <label for="20 inch">20 inch</label>&nbsp;
+
+    <input type="radio" id="22 inch" name="diameter" value="22">
+    <label for="22 inch">22 inch</label><br><br>
+
+    <p>Choose your topping:</p>
+
+    <input type="radio" id="chicken" name="topping" value="0">
+    <label for="chicken">chicken</label>&nbsp;
+
+    <input type="radio" id="papperoni" name="topping" value="1">
+    <label for="papperoni">papperoni</label>&nbsp;
+
+    <input type="radio" id="mushrooms" name="topping" value="2">
+    <label for="mushrooms">mushrooms</label>&nbsp;
+
+    <input type="radio" id="smoked_beef" name="topping" value="3">
+    <label for="smoked_beef">smoked_beef</label>&nbsp;
+
+    <input type="radio" id="mozzarella" name="topping" value="4">
+    <label for="mozzarella">mozzarella</label>&nbsp;
+
+    <input type="radio" id="black_papper" name="topping" value="5">
+    <label for="black_papper">black_papper</label>&nbsp;
+
+    <input type="radio" id="tuna" name="topping" value="6">
+    <label for="tuna">tuna</label>&nbsp;
+
+    <input type="radio" id="meat" name="topping" value="7">
+    <label for="meat">meat</label>&nbsp;
+
+    <input type="radio" id="sausage" name="topping" value="8">
+    <label for="sausage">sausage</label>&nbsp;
+
+    <input type="radio" id="onion" name="topping" value="9">
+    <label for="onion">onion</label>&nbsp;
+
+    <input type="radio" id="vegetables" name="topping" value="10">
+    <label for="vegetables">vegetables</label>&nbsp;
+
+    <input type="radio" id="beef" name="topping" value="11">
+    <label for="beef">beef</label><br><br>
+
+    <p>Choose variant:</p>
+
+    <input type="radio" id="double_signature" name="variant" value="0">
+    <label for="double_signature">double_signature</label>&nbsp;
+
+    <input type="radio" id="american_favorite" name="variant" value="1">
+    <label for="american_favorite">american_favourite</label>&nbsp;
+
+    <input type="radio" id="super_supreme" name="variant" value="2">
+    <label for="super_supreme">super_supreme</label>&nbsp;
+
+    <input type="radio" id="meat_lovers" name="variant" value="3">
+    <label for="meat_lovers">meat_lovers</label>&nbsp;
+
+    <input type="radio" id="double_mix" name="variant" value="4">
+    <label for="double_mix">double_mix</label>&nbsp;
+
+    <input type="radio" id="classic" name="variant" value="5">
+    <label for="classic">classic</label>&nbsp;
+
+    <input type="radio" id="crunchy" name="variant" value="6">
+    <label for="crunchy">crunchy</label>&nbsp;
+
+    <input type="radio" id="new_york" name="variant" value="7">
+    <label for="new_york">new_york</label>&nbsp;
+
+    <input type="radio" id="double_decker" name="variant" value="8">
+    <label for="double_decker">double_decker</label>&nbsp;
+
+    <input type="radio" id="spicy_tuna" name="variant" value="9">
+    <label for="spicy_tuna">spicy_tuna</label>&nbsp;
+
+    <input type="radio" id="BBQ_meat_fiesta" name="variant" value="10>
+    <label for="BBQ_meat_fiesta">BBQ_meat_fiesta</label>&nbsp;
+
+    <input type="radio" id="BBQ_sausage" name="variant" value="11">
+    <label for="BBQ_sausage">BBQ_sausage</label>&nbsp;
+
+    <input type="radio" id="extravaganza" name="variant" value="12">
+    <label for="extravaganza">extravaganza</label>&nbsp;
+
+    <input type="radio" id="meat_eater" name="variant" value="13">
+    <label for="meat_eater">meat_eater</label>&nbsp;
+
+    <input type="radio" id="gournet_greek" name="variant" value="14">
+    <label for="gournet_greek">gournet_greek</label>&nbsp;
+
+    <input type="radio" id="italian_veggie" name="variant" value="15">
+    <label for="italian_veggie">italian_veggie</label>&nbsp;
+
+    <input type="radio" id="thai_veggie" name="variant" value="16">
+    <label for="thai_veggie">thai_veggie</label>&nbsp;
+
+    <input type="radio" id="american_classic" name="variant" value="17">
+    <label for="american_classic">american_classic</label>&nbsp;
+
+    <input type="radio" id="neptune_tuna" name="variant" value="18">
+    <label for="neptune_tuna">neptune_tuna</label>&nbsp;
+
+    <input type="radio" id="spicy tuna" name="variant" value="19">
+    <label for="spicy tuna">spicy tuna</label><br><br>
+
+    <p>Choose size:</p>
+
+    <input type="radio" id="jumbo" name="size" value="0">
+    <label for="jumbo">jumbo</label>&nbsp;
+
+    <input type="radio" id="regular" name="size" value="1">
+    <label for="regular">regular</label>&nbsp;
+
+    <input type="radio" id="small" name="size" value="2">
+    <label for="small">small</label>&nbsp;
+
+    <input type="radio" id="medium" name="size" value="3">
+    <label for="medium">medium</label>&nbsp;
+
+    <input type="radio" id="large" name="size" value="4">
+    <label for="large">large</label>&nbsp;
+
+    <input type="radio" id="XL" name="size" value="5">
+    <label for="XL">XL</label><br><br>
+
+    <p>Extra Sauce</p>
+
+    <input type="radio" id="" name="extra_sauce" value="0">
+    <label for="Yes">Yes</label>&nbsp;
+    <input type="radio" id="" name="extra_sauce" value="1">
+    <label for="No">No</label>&nbsp;
+
+    <p>Extra Cheese</p>
+    <input type="radio" id="" name="extra_Cheese" value="0">
+    <label for="Yes">Yes</label>&nbsp;
+    <input type="radio" id="" name="extra_Cheese" value="1">
+    <label for="No">No</label>&nbsp;
+
+    <p>Extra mushrooms</p>
+    <input type="radio" id="" name="extra_mushroom" value="0">
+    <label for="Yes">Yes</label>&nbsp;
+    <input type="radio" id="" name="extra_mushroom" value="1">
+    <label for="No">No</label><br><br>
+
+    <input type="submit" value="Submit">
+
+    {{ prediction_text }}
+
+
+
+
+</form>
+
+</body>
+</html>
+
+
+
+
